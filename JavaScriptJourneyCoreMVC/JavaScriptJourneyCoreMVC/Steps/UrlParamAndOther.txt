@@ -1,0 +1,7 @@
+﻿//JavaScript code to get the query string values by parameter name
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const meetingParam = urlParams.get('m');
+
+const nameParam = urlParams.get('n');
