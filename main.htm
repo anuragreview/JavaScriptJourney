@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  window.onbeforeunload = function() {
+    $('body').append('<p>called at: ' + new Date().toString() + '</p>');
+    $("#btn2").trigger('click');
+    //if user will click anywhere in the page or enter any value or select any option/radio/checkox etc. then it will work.
+    return "Are you sure to leave?";
+  };
+  $("#btn2").on('click',function(){
+    $('body').append('<p>btn clicked at: ' + new Date().toString() + '</p>');
+  });
+});
+</script>
+</head>
+<body>
+<input type="button" id="btn2" value="Click me!"/>
+<input type="text" />
+<hr />
+<strong>if user will click anywhere in the page or enter any value or select any option/radio/checkox etc. then if user try to close the browser or tab at that time 'onbeforeunload' event will work.</strong>
+</body>
+</html>
